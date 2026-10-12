@@ -76,8 +76,8 @@ class CustomController extends Controller
         });
 
         // Read the secret from Laravel configuration.
-        $SECRET = "SEC_722d9723866ea679b5eb4f92ad37c7ceb1b7c3e7c3441f95980414cc22ff05da";
-        $BASE_URL = "https://api.sandbox.payment.com/v1/payments";
+        $SECRET = config('app.payment.secret');
+        $BASE_URL = config('app.payment.base_url');
 
         if (blank($SECRET)) {
             return response()->json([
